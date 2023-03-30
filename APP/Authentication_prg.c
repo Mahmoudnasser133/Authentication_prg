@@ -80,7 +80,8 @@ int main ()
 	//external int
 	enableInt(Exti_Config_Arr+1);
 	setCallBack(Log_out,INT1_id);
-
+while(1)
+{
 /*****************       login first time   *************************
  *****************							***************************/
 	Login_First_Time();
@@ -124,12 +125,12 @@ while(1)
 				H_LCD_void_clearScreen();
 				H_LCD_void_sendString("End Time");
 
-				main();
+				break;
 			}
 	}
 
 
-
+}
 	return 0;
 }
 
@@ -177,7 +178,7 @@ void Log_out(void)
 	H_LCD_void_clearScreen();
 	H_LCD_void_sendString("End Time");
 	H_LED_void_turnON(LED_GRN);
-	main();
+
 }
 
 void Login_First_Time(void)
